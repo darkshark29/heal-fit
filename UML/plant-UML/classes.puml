@@ -23,8 +23,7 @@ Acount -- Profile
 
 enum ProgramType
 {
-	Integer ID
-	String Name
+	IMC
 }
 
 class Program
@@ -40,9 +39,8 @@ Program -- Profile
 
 enum TraitType
 {
-	Integer ID
-	String Name
-	String Unity
+	POIDS
+	TAILLE
 }
 
 class Trait
