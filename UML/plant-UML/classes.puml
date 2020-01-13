@@ -1,0 +1,60 @@
+@startuml
+
+class Acount
+{
+	Integer ID
+	string Email
+	string Pseudo
+	string Password
+}
+
+class Profile
+{
+	Integer ID
+	String FirstName
+	String LastName
+	Integer Age
+	String ImageUrl
+	ProfileType Type
+	Acount acount
+}
+
+Acount -- Profile
+
+enum ProgramType
+{
+	Integer ID
+	String Name
+}
+
+class Program
+{
+	Integer ID
+	String Name
+	ProgramType Type
+	Profile Profile
+}
+
+Program -- ProgramType
+Program -- Profile
+
+enum TraitType
+{
+	Integer ID
+	String Name
+	String Unity
+}
+
+class Trait
+{ 
+	Integer ID
+	String value
+	TratType Type
+	DateTime Date
+	Program Program
+}
+
+Trait -- TraitType
+Trait -- Program
+
+@enduml
