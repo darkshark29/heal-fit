@@ -15,7 +15,7 @@ namespace heal_fit.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.0");
 
-            modelBuilder.Entity("heal_fit.Models.Acount", b =>
+            modelBuilder.Entity("heal_fit.Models.Account", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -32,7 +32,7 @@ namespace heal_fit.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Acount");
+                    b.ToTable("Account");
                 });
 
             modelBuilder.Entity("heal_fit.Models.Plan", b =>

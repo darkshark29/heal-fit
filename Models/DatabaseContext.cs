@@ -4,13 +4,18 @@ namespace heal_fit.Models
 {
     public class DatabaseContext : DbContext
     {
+        public DbSet<Account> Acount { get; set; }
+        public DbSet<Plan> Plan { get; set; }
+
         public DatabaseContext(DbContextOptions<DatabaseContext> options)
             : base(options)
         {
         }
 
-        public DbSet<Account> Acount { get; set; }
-        public DbSet<Plan> Plan { get; set; }
-
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Account>().ToTable("Account");
+            modelBuilder.Entity<Plan>().ToTable("Plan");
+        }
     }
 }
