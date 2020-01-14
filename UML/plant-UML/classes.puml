@@ -1,6 +1,6 @@
 @startuml
 
-class Acount
+class Account
 {
 	Integer ID
 	string Email
@@ -15,27 +15,26 @@ class Profile
 	String LastName
 	Integer Age
 	String ImageUrl
-	ProfileType Type
-	Acount acount
+	Account acount
 }
 
 Acount -- Profile
 
-enum ProgramType
+enum PlanType
 {
 	IMC
 }
 
-class Program
+class Plan
 {
 	Integer ID
 	String Name
-	ProgramType Type
+	PlanType Type
 	Profile Profile
 }
 
-Program -- ProgramType
-Program -- Profile
+Plan -- PlanType
+Plan -- Profile
 
 enum TraitType
 {
@@ -49,10 +48,10 @@ class Trait
 	String value
 	TratType Type
 	DateTime Date
-	Program Program
+	Plan Plan
 }
 
 Trait -- TraitType
-Trait -- Program
+Trait -- Plan
 
 @enduml
