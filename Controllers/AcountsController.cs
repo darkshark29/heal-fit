@@ -11,11 +11,11 @@ namespace heal_fit.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AcountsController : ControllerBase
+    public class AccountsController : ControllerBase
     {
         private readonly DatabaseContext _context;
 
-        public AcountsController(DatabaseContext context)
+        public AccountsController(DatabaseContext context)
         {
             _context = context;
         }

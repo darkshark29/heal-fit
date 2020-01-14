@@ -8,7 +8,7 @@ using heal_fit.Models;
 namespace heal_fit.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20200114134434_InitialCreate")]
+    [Migration("20200114140328_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
