@@ -13,9 +13,9 @@ namespace heal_fit.Controllers
     [ApiController]
     public class AcountsController : ControllerBase
     {
-        private readonly AcountContext _context;
+        private readonly DatabaseContext _context;
 
-        public AcountsController(AcountContext context)
+        public AcountsController(DatabaseContext context)
         {
             _context = context;
         }

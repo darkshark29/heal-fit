@@ -2,13 +2,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace heal_fit.Models
 {
-    public class PlanContext : DbContext
+    public class DatabaseContext : DbContext
     {
-        public PlanContext(DbContextOptions<PlanContext> options)
+        public DatabaseContext(DbContextOptions<DatabaseContext> options)
             : base(options)
         {
         }
 
+        public DbSet<Acount> Acount { get; set; }
         public DbSet<Plan> Plan { get; set; }
+
     }
 }

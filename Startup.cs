@@ -20,13 +20,13 @@ namespace heal_fit
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AcountContext>(options =>
+            services.AddDbContext<DatabaseContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("heal_fit")));
             services.AddControllers();
 
-            services.AddDbContext<PlanContext>(opt =>
-               opt.UseInMemoryDatabase("healfit"));
-            services.AddControllers();
+            // services.AddDbContext<PlanContext>(options =>
+            //    options.UseSqlite(Configuration.GetConnectionString("heal_fit")));
+            // services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
