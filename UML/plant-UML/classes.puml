@@ -18,7 +18,7 @@ class Profile
 	Account acount
 }
 
-Acount -- Profile
+Account -- Profile
 
 enum PlanType
 {
