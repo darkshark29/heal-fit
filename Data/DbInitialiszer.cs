@@ -14,7 +14,7 @@ namespace heal_fit.Data
                 serviceProvider.GetRequiredService<
                     DbContextOptions<DatabaseContext>>()))
             {
-				if (!context.Acount.Any())
+				if (!context.Account.Any())
 				{
 					Account[] accounts = new Account[]
 					{

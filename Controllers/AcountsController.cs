@@ -24,14 +24,14 @@ namespace heal_fit.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Account>>> GetAcounts()
         {
-            return await _context.Acount.ToListAsync();
+            return await _context.Account.ToListAsync();
         }
 
         // GET: api/Acounts/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Account>> GetAcount(int id)
         {
-            var acount = await _context.Acount.FindAsync(id);
+            var acount = await _context.Account.FindAsync(id);
 
             if (acount == null)
             {
@@ -45,14 +45,14 @@ namespace heal_fit.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAcount(int id, [FromForm] Account acount)
+        public async Task<ActionResult<Account>> PutAcount(int id, [FromForm] Account account)
         {
-            if (id != acount.ID)
+            if (id != account.ID)
             {
                 return BadRequest();
             }
 
-            _context.Entry(acount).State = EntityState.Modified;
+            _context.Entry(account).State = EntityState.Modified;
 
             try
             {
@@ -70,40 +70,40 @@ namespace heal_fit.Controllers
                 }
             }
 
-            return NoContent();
+            return account;
         }
 
         // POST: api/Acounts
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<Account>> PostAcount([FromForm]Account acount)
+        public async Task<ActionResult<Account>> PostAcount([FromForm]Account account)
         {
-            _context.Acount.Add(acount);
+            _context.Account.Add(account);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAcount", new { id = acount.ID }, acount);
+            return CreatedAtAction("GetAcount", new { id = account.ID }, account);
         }
 
         // DELETE: api/Acounts/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Account>> DeleteAcount(int id)
         {
-            var acount = await _context.Acount.FindAsync(id);
-            if (acount == null)
+            var account = await _context.Account.FindAsync(id);
+            if (account == null)
             {
                 return NotFound();
             }
 
-            _context.Acount.Remove(acount);
+            _context.Account.Remove(account);
             await _context.SaveChangesAsync();
 
-            return acount;
+            return account;
         }
 
         private bool AcountExists(int id)
         {
-            return _context.Acount.Any(e => e.ID == id);
+            return _context.Account.Any(e => e.ID == id);
         }
     }
 }
