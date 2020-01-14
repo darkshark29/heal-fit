@@ -9,7 +9,7 @@ namespace heal_fit.Models
         {
         }
 
-        public DbSet<Acount> Acount { get; set; }
+        public DbSet<Account> Acount { get; set; }
         public DbSet<Plan> Plan { get; set; }
 
     }

@@ -1,6 +1,6 @@
 namespace heal_fit.Models
 {
-	public class Acount
+	public class Account
 	{
 		public int ID {get; set;}
 		public string Email {get; set;}

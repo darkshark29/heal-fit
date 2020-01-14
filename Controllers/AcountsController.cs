@@ -22,14 +22,14 @@ namespace heal_fit.Controllers
 
         // GET: api/Acounts
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Acount>>> GetAcounts()
+        public async Task<ActionResult<IEnumerable<Account>>> GetAcounts()
         {
             return await _context.Acount.ToListAsync();
         }
 
         // GET: api/Acounts/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Acount>> GetAcount(int id)
+        public async Task<ActionResult<Account>> GetAcount(int id)
         {
             var acount = await _context.Acount.FindAsync(id);
 
@@ -45,7 +45,7 @@ namespace heal_fit.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAcount(int id, [FromForm] Acount acount)
+        public async Task<IActionResult> PutAcount(int id, [FromForm] Account acount)
         {
             if (id != acount.ID)
             {
@@ -77,7 +77,7 @@ namespace heal_fit.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<Acount>> PostAcount([FromForm]Acount acount)
+        public async Task<ActionResult<Account>> PostAcount([FromForm]Account acount)
         {
             _context.Acount.Add(acount);
             await _context.SaveChangesAsync();
@@ -87,7 +87,7 @@ namespace heal_fit.Controllers
 
         // DELETE: api/Acounts/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Acount>> DeleteAcount(int id)
+        public async Task<ActionResult<Account>> DeleteAcount(int id)
         {
             var acount = await _context.Acount.FindAsync(id);
             if (acount == null)
