@@ -22,8 +22,8 @@ namespace heal_fit
         {
             services.AddControllers();
 
-            services.AddDbContext<ProgramContext>(opt =>
-               opt.UseInMemoryDatabase("HealFit"));
+            services.AddDbContext<PlanContext>(opt =>
+               opt.UseInMemoryDatabase("healfit"));
             services.AddControllers();
         }
 
