@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using heal_fit.Models;
 
 namespace heal_fit.Models
 {
@@ -18,6 +19,9 @@ namespace heal_fit.Models
             modelBuilder.Entity<Account>().ToTable("Account");
             modelBuilder.Entity<Plan>().ToTable("Plan");
             modelBuilder.Entity<Profile>().ToTable("Profile");
+            modelBuilder.Entity<Trait>().ToTable("Trait");
         }
+
+        public DbSet<heal_fit.Models.Trait> Trait { get; set; }
     }
 }
