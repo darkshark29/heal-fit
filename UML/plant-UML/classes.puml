@@ -20,22 +20,6 @@ class Profile
 
 Account "1.1" -- "1.*" Profile
 
-enum PlanType
-{
-	IMC
-}
-
-class Plan
-{
-	Integer ID
-	String Name
-	PlanType Type
-	Profile Profile
-}
-
-Plan "0.*" -- "1.1" PlanType
-Plan "0.*" -- "1.1" Profile
-
 enum TraitType
 {
 	POIDS
@@ -49,10 +33,29 @@ class Trait
 	String value
 	TratType Type
 	DateTime Date
-	Plan Plan
+	Profile Profile
 }
 
 Trait "0.*" -- "1.1" TraitType
-Trait "0.*" -- "1.1" Plan
+
+Trait "0.*" -- "1.1" Profile
+
+enum PlanType
+{
+	IMC
+}
+
+class Plan
+{
+	Integer ID
+	String Name
+	PlanType Type
+	Profile Profile
+	Datetime BeginDate
+	Datetime EndDate
+}
+
+Plan "0.*" -- "1.1" PlanType
+Plan "0.*" -- "1.1" Profile
 
 @enduml
