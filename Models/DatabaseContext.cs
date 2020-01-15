@@ -6,6 +6,7 @@ namespace heal_fit.Models
     {
         public DbSet<Account> Account { get; set; }
         public DbSet<Plan> Plan { get; set; }
+        public DbSet<Profile> Profile { get; set; }
 
         public DatabaseContext(DbContextOptions<DatabaseContext> options)
             : base(options)
@@ -16,6 +17,7 @@ namespace heal_fit.Models
         {
             modelBuilder.Entity<Account>().ToTable("Account");
             modelBuilder.Entity<Plan>().ToTable("Plan");
+            modelBuilder.Entity<Profile>().ToTable("Profile");
         }
     }
 }

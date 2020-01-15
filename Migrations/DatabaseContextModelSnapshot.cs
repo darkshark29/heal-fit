@@ -51,6 +51,43 @@ namespace heal_fit.Migrations
 
                     b.ToTable("Plan");
                 });
+
+            modelBuilder.Entity("heal_fit.Models.Profile", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("AccountID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Age")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("AccountID");
+
+                    b.ToTable("Profile");
+                });
+
+            modelBuilder.Entity("heal_fit.Models.Profile", b =>
+                {
+                    b.HasOne("heal_fit.Models.Account", null)
+                        .WithMany("Profiles")
+                        .HasForeignKey("AccountID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
 #pragma warning restore 612, 618
         }
     }

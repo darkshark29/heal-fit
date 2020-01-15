@@ -51,6 +51,41 @@ namespace heal_fit.Data
 
 					context.SaveChanges();
 				}
+
+				if (!context.Profile.Any())
+				{
+					Profile[] profiles = new Profile[]
+					{
+						new Profile
+						{
+							FirstName = "Maxime",
+							LastName = "Cardinal",
+							Age = 26,
+							AccountID = context.Account.Find(1).ID
+						},
+						new Profile
+						{
+							FirstName = "Thibaud",
+							LastName = "Philippi",
+							Age = 22,
+							AccountID = context.Account.Find(2).ID
+						},
+						new Profile
+						{
+							FirstName = "Nathan",
+							LastName = "Ropars",
+							Age = 22,
+							AccountID = context.Account.Find(3).ID
+						}
+					};
+
+					foreach (Profile profile in profiles)
+					{
+						context.Add(profile);
+					}
+
+					context.SaveChanges();
+				}
 			}
 		}
 	}
