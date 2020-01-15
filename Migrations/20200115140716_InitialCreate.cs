@@ -72,7 +72,7 @@ namespace heal_fit.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Value = table.Column<string>(nullable: true),
+                    Value = table.Column<float>(nullable: false),
                     Type = table.Column<int>(nullable: false),
                     Date = table.Column<DateTime>(nullable: false),
                     ProfileID = table.Column<int>(nullable: false)

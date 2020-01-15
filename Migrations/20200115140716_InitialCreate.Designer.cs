@@ -9,7 +9,7 @@ using heal_fit.Models;
 namespace heal_fit.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20200115133223_InitialCreate")]
+    [Migration("20200115140716_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -103,8 +103,8 @@ namespace heal_fit.Migrations
                     b.Property<int>("Type")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Value")
-                        .HasColumnType("TEXT");
+                    b.Property<float>("Value")
+                        .HasColumnType("REAL");
 
                     b.HasKey("ID");
 

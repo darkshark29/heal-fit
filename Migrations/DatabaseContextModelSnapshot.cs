@@ -101,8 +101,8 @@ namespace heal_fit.Migrations
                     b.Property<int>("Type")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Value")
-                        .HasColumnType("TEXT");
+                    b.Property<float>("Value")
+                        .HasColumnType("REAL");
 
                     b.HasKey("ID");
 
