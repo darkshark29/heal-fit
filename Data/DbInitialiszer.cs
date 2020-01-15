@@ -72,6 +72,13 @@ namespace heal_fit.Data
 						},
 						new Profile
 						{
+							FirstName = "John",
+							LastName = "Johann Johnson",
+							Age = 22,
+							AccountID = context.Account.Find(2).ID
+						},
+						new Profile
+						{
 							FirstName = "Nathan",
 							LastName = "Ropars",
 							Age = 22,
@@ -84,6 +91,49 @@ namespace heal_fit.Data
 						context.Add(profile);
 					}
 
+					context.SaveChanges();
+				}
+
+				if (!context.Plan.Any())
+				{
+					Plan[] plans = new Plan[]
+					{
+						new Plan
+						{
+							Name = "IMC",
+							Type = Plan.PlanType.IMC,
+							ProfileID = 1
+						},
+						new Plan
+						{
+							Name = "IMC 2",
+							Type = Plan.PlanType.IMC,
+							ProfileID = 1
+						},
+						new Plan
+						{
+							Name = "IMC",
+							Type = Plan.PlanType.IMC,
+							ProfileID = 2
+						},
+						new Plan
+						{
+							Name = "IMC",
+							Type = Plan.PlanType.IMC,
+							ProfileID = 3
+						},
+						new Plan
+						{
+							Name = "IMC",
+							Type = Plan.PlanType.IMC,
+							ProfileID = 4
+						}
+					};
+
+					foreach (Plan plan in plans)
+					{
+						context.Add(plan);
+					}
 					context.SaveChanges();
 				}
 			}

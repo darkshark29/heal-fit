@@ -33,13 +33,14 @@ class Plan
 	Profile Profile
 }
 
-Plan -- PlanType
-Plan -- Profile
+Plan "0.*" -- "1.1" PlanType
+Plan "0.*" -- "1.1" Profile
 
 enum TraitType
 {
 	POIDS
 	TAILLE
+	IMC
 }
 
 class Trait
@@ -51,7 +52,7 @@ class Trait
 	Plan Plan
 }
 
-Trait -- TraitType
-Trait -- Plan
+Trait "0.*" -- "1.1" TraitType
+Trait "0.*" -- "1.1" Plan
 
 @enduml

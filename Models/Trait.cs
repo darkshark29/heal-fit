@@ -13,7 +13,8 @@ namespace heal_fit.Models
         public enum TraitType
         {
             POIDS, 
-            TAILLE
+            TAILLE,
+            IMC
         }
 
         public DateTime Date { get; set; }
