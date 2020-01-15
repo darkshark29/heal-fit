@@ -1,5 +1,5 @@
 {
-  "FilePath": "d:\\ASP.net\\heal-fit\\heal-fit.csproj",
+  "FilePath": "d:\\Lab\\heal-fit\\heal-fit.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -20496,7 +20496,7 @@
         }
       }
     ],
-    "CSharpLanguageVersion": 703
+    "CSharpLanguageVersion": 800
   },
   "RootNamespace": "heal_fit",
   "Documents": [],

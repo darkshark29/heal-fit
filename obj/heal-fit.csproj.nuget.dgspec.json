@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ASP.net\\heal-fit\\heal-fit.csproj": {}
+    "D:\\Lab\\heal-fit\\heal-fit.csproj": {}
   },
   "projects": {
-    "D:\\ASP.net\\heal-fit\\heal-fit.csproj": {
+    "D:\\Lab\\heal-fit\\heal-fit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ASP.net\\heal-fit\\heal-fit.csproj",
+        "projectUniqueName": "D:\\Lab\\heal-fit\\heal-fit.csproj",
         "projectName": "heal-fit",
-        "projectPath": "D:\\ASP.net\\heal-fit\\heal-fit.csproj",
-        "packagesPath": "C:\\Users\\maxca\\.nuget\\packages\\",
-        "outputPath": "D:\\ASP.net\\heal-fit\\obj\\",
+        "projectPath": "D:\\Lab\\heal-fit\\heal-fit.csproj",
+        "packagesPath": "C:\\Users\\DevGuy\\.nuget\\packages\\",
+        "outputPath": "D:\\Lab\\heal-fit\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\maxca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DevGuy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
