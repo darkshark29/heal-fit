@@ -21,17 +21,17 @@ namespace heal_fit.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<Boolean>> Authenticate([FromQuery] string login, [FromQuery] string password)
+        public async Task<ActionResult<Account>> Authenticate([FromQuery] string login, [FromQuery] string password)
         {
 			var account = await _context.Account.Where(a => a.Email == login && a.Password == password).FirstOrDefaultAsync();
 
 			if (account == null)
 			{
-				return false;
+				return null;
 			}
 			else
 			{
-				return true;
+				return account;
 			}
         }
 	}
