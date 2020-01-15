@@ -4,7 +4,7 @@ namespace heal_fit.Models
 {
     public class Trait
     {
-        public long Id { get; set; }
+        public int ID { get; set; }
 
         public string Value { get; set; }
 
@@ -12,13 +12,12 @@ namespace heal_fit.Models
 
         public enum TraitType
         {
-            POIDS, TAILLE
+            POIDS, 
+            TAILLE
         }
 
         public DateTime Date { get; set; }
 
-        public int PlanId { get; set; }
-
-        public Plan Plan { get; set; }
+        public int? PlanID { get; set; }
     }
 }

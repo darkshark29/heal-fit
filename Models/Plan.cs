@@ -1,11 +1,14 @@
+using System.Collections.Generic;
 using heal_fit.Models;
 
 namespace heal_fit.Models
 {
     public class Plan
     {
-        public long Id { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
+        public IEnumerable<Trait> Traits { get; set; }
+        public int ProfileID { get; set; }
 
         public PlanType type { get; set; }
 

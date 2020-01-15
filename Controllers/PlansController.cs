@@ -47,7 +47,7 @@ namespace heal_fit.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPlan(long id, Plan plan)
         {
-            if (id != plan.Id)
+            if (id != plan.ID)
             {
                 return BadRequest();
             }
@@ -82,7 +82,7 @@ namespace heal_fit.Controllers
             _context.Plan.Add(plan);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPlan", new { id = plan.Id }, plan);
+            return CreatedAtAction("GetPlan", new { id = plan.ID }, plan);
         }
 
         // DELETE: api/Plans/5
@@ -103,7 +103,7 @@ namespace heal_fit.Controllers
 
         private bool PlanExists(long id)
         {
-            return _context.Plan.Any(e => e.Id == id);
+            return _context.Plan.Any(e => e.ID == id);
         }
     }
 }

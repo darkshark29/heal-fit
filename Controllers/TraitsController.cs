@@ -47,7 +47,7 @@ namespace heal_fit.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTrait(long id, Trait trait)
         {
-            if (id != trait.Id)
+            if (id != trait.ID)
             {
                 return BadRequest();
             }
@@ -82,7 +82,7 @@ namespace heal_fit.Controllers
             _context.Trait.Add(trait);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetTrait", new { id = trait.Id }, trait);
+            return CreatedAtAction("GetTrait", new { id = trait.ID }, trait);
         }
 
         // DELETE: api/Traits/5
@@ -103,7 +103,7 @@ namespace heal_fit.Controllers
 
         private bool TraitExists(long id)
         {
-            return _context.Trait.Any(e => e.Id == id);
+            return _context.Trait.Any(e => e.ID == id);
         }
     }
 }

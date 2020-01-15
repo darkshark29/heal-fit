@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace heal_fit.Models
@@ -10,5 +11,6 @@ namespace heal_fit.Models
 		public int Age {get; set;}
 		public string ImageUrl {get; set;}
 		public int AccountID {get; set;}
+		public IEnumerable<Plan> Plans { get; set; }
 	}
 }
