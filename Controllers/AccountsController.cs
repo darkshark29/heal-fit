@@ -41,6 +41,20 @@ namespace heal_fit.Controllers
             return account;
         }
 
+        // GET: api/Accounts/5/Profiles
+        [HttpGet("{id}/Profiles")]
+        public async Task<IEnumerable<Profile>> GetAccountProfiles(int id)
+        {
+            var account = _context.Account.Include(a => a.Profiles).Where(a => a.ID == id).FirstOrDefault();
+
+            if (account == null)
+            {
+                return null;
+            }
+
+            return account.Profiles;
+        }
+
         // PUT: api/Accounts/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
