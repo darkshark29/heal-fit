@@ -136,6 +136,41 @@ namespace heal_fit.Data
 					}
 					context.SaveChanges();
 				}
+
+				if (!context.Trait.Any())
+				{
+					Trait[] traits = new Trait[]
+					{
+						new Trait()
+						{
+							Value = "50",
+							Type = Trait.TraitType.POIDS,
+							Date = new DateTime(2020, 01, 15),
+							ProfileID = 1
+						},
+						new Trait()
+						{
+							Value = "150",
+							Type = Trait.TraitType.POIDS,
+							Date = new DateTime(2019, 01, 15),
+							ProfileID = 2
+						},
+						new Trait()
+						{
+							Value = "90",
+							Type = Trait.TraitType.POIDS,
+							Date = new DateTime(2020, 01, 15),
+							ProfileID = 2
+						},
+					};
+
+					foreach (Trait trait in traits)
+					{
+						context.Add(trait);
+					}
+
+					context.SaveChanges();
+				}
 			}
 		}
 	}

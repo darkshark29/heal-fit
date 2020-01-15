@@ -45,7 +45,7 @@ namespace heal_fit.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTrait(long id, Trait trait)
+        public async Task<IActionResult> PutTrait(long id, [FromForm] Trait trait)
         {
             if (id != trait.ID)
             {
@@ -77,7 +77,7 @@ namespace heal_fit.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<Trait>> PostTrait(Trait trait)
+        public async Task<ActionResult<Trait>> PostTrait([FromForm] Trait trait)
         {
             _context.Trait.Add(trait);
             await _context.SaveChangesAsync();

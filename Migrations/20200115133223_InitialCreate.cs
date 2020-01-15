@@ -75,15 +75,15 @@ namespace heal_fit.Migrations
                     Value = table.Column<string>(nullable: true),
                     Type = table.Column<int>(nullable: false),
                     Date = table.Column<DateTime>(nullable: false),
-                    PlanID = table.Column<int>(nullable: false)
+                    ProfileID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Trait", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_Trait_Plan_PlanID",
-                        column: x => x.PlanID,
-                        principalTable: "Plan",
+                        name: "FK_Trait_Profile_ProfileID",
+                        column: x => x.ProfileID,
+                        principalTable: "Profile",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -99,18 +99,18 @@ namespace heal_fit.Migrations
                 column: "AccountID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Trait_PlanID",
+                name: "IX_Trait_ProfileID",
                 table: "Trait",
-                column: "PlanID");
+                column: "ProfileID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Trait");
+                name: "Plan");
 
             migrationBuilder.DropTable(
-                name: "Plan");
+                name: "Trait");
 
             migrationBuilder.DropTable(
                 name: "Profile");
