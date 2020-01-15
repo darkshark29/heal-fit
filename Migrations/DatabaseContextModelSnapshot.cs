@@ -48,7 +48,7 @@ namespace heal_fit.Migrations
                     b.Property<int>("ProfileID")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("type")
+                    b.Property<int>("Type")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("ID");
@@ -95,7 +95,7 @@ namespace heal_fit.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("PlanID")
+                    b.Property<int>("PlanID")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Type")
@@ -133,7 +133,9 @@ namespace heal_fit.Migrations
                 {
                     b.HasOne("heal_fit.Models.Plan", null)
                         .WithMany("Traits")
-                        .HasForeignKey("PlanID");
+                        .HasForeignKey("PlanID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

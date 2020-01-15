@@ -53,7 +53,7 @@ namespace heal_fit.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(nullable: true),
                     ProfileID = table.Column<int>(nullable: false),
-                    type = table.Column<int>(nullable: false)
+                    Type = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -75,7 +75,7 @@ namespace heal_fit.Migrations
                     Value = table.Column<string>(nullable: true),
                     Type = table.Column<int>(nullable: false),
                     Date = table.Column<DateTime>(nullable: false),
-                    PlanID = table.Column<int>(nullable: true)
+                    PlanID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -85,7 +85,7 @@ namespace heal_fit.Migrations
                         column: x => x.PlanID,
                         principalTable: "Plan",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

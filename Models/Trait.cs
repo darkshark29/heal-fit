@@ -18,6 +18,6 @@ namespace heal_fit.Models
 
         public DateTime Date { get; set; }
 
-        public int? PlanID { get; set; }
+        public int PlanID { get; set; }
     }
 }
