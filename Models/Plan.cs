@@ -7,7 +7,6 @@ namespace heal_fit.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public IEnumerable<Trait> Traits { get; set; }
         public int ProfileID { get; set; }
 
         public PlanType Type { get; set; }

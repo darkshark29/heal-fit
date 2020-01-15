@@ -41,6 +41,20 @@ namespace heal_fit.Controllers
             return profile;
         }
 
+        // GET: api/Profiles/5/Traits
+        [HttpGet("{id}/Traits")]
+        public async Task<ActionResult<Profile>> GetProfileTraits(int id)
+        {
+            var profile = await _context.Profile.Include(p => p.Traits).Where(p => p.ID == id).FirstOrDefaultAsync();
+
+            if (profile == null)
+            {
+                return NotFound();
+            }
+
+            return profile;
+        }
+
         // PUT: api/Profiles/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.

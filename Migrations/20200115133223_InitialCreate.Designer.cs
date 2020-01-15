@@ -9,7 +9,7 @@ using heal_fit.Models;
 namespace heal_fit.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20200115094223_InitialCreate")]
+    [Migration("20200115133223_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -97,7 +97,7 @@ namespace heal_fit.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("PlanID")
+                    b.Property<int>("ProfileID")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Type")
@@ -108,7 +108,7 @@ namespace heal_fit.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("PlanID");
+                    b.HasIndex("ProfileID");
 
                     b.ToTable("Trait");
                 });
@@ -133,9 +133,9 @@ namespace heal_fit.Migrations
 
             modelBuilder.Entity("heal_fit.Models.Trait", b =>
                 {
-                    b.HasOne("heal_fit.Models.Plan", null)
+                    b.HasOne("heal_fit.Models.Profile", null)
                         .WithMany("Traits")
-                        .HasForeignKey("PlanID")
+                        .HasForeignKey("ProfileID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
