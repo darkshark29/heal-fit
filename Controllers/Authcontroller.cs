@@ -19,9 +19,9 @@ namespace heal_fit.Controllers
         {
             _context = context;
         }
-		// GET: api/Authenticate
+
         [HttpGet]
-        public async Task<ActionResult<Boolean>> Authenticate([FromForm] string login, [FromForm] string password)
+        public async Task<ActionResult<Boolean>> Authenticate([FromQuery] string login, [FromQuery] string password)
         {
 			var account = await _context.Account.Where(a => a.Email == login && a.Password == password).FirstOrDefaultAsync();
 
