@@ -43,16 +43,16 @@ namespace heal_fit.Controllers
 
         // GET: api/Accounts/5/Profiles
         [HttpGet("{id}/Profiles")]
-        public async Task<IEnumerable<Profile>> GetAccountProfiles(int id)
+        public async Task<ActionResult<Account>> GetAccountProfiles(int id)
         {
-            var account = _context.Account.Include(a => a.Profiles).Where(a => a.ID == id).FirstOrDefault();
+            var account = await _context.Account.Include(a => a.Profiles).Where(a => a.ID == id).FirstAsync();
 
             if (account == null)
             {
-                return null;
+                return NotFound();
             }
 
-            return account.Profiles;
+            return account;
         }
 
         // PUT: api/Accounts/5
