@@ -73,9 +73,9 @@ namespace heal_fit.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProfile(int id, [FromForm] Profile profile)
+        public async Task<IActionResult> PutProfile(int id, [FromBody] Profile profile)
         {
-            if (id != profile.AccountID)
+            if (id != profile.ID)
             {
                 return BadRequest();
             }
@@ -105,7 +105,7 @@ namespace heal_fit.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<Profile>> PostProfile([FromForm] Profile profile)
+        public async Task<ActionResult<Profile>> PostProfile([FromBody] Profile profile)
         {
             _context.Profile.Add(profile);
             await _context.SaveChangesAsync();

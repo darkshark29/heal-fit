@@ -59,7 +59,7 @@ namespace heal_fit.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAccount(int id, [FromForm]Account account)
+        public async Task<IActionResult> PutAccount(int id, [FromBody]Account account)
         {
             if (id != account.ID)
             {
@@ -91,7 +91,7 @@ namespace heal_fit.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<Account>> PostAccount([FromForm]Account account)
+        public async Task<ActionResult<Account>> PostAccount([FromBody]Account account)
         {
             _context.Account.Add(account);
             await _context.SaveChangesAsync();

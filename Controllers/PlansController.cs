@@ -45,7 +45,7 @@ namespace heal_fit.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPlan(long id, [FromForm] Plan plan)
+        public async Task<IActionResult> PutPlan(long id, [FromBody] Plan plan)
         {
             if (id != plan.ID)
             {
@@ -77,7 +77,7 @@ namespace heal_fit.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<Plan>> PostPlan([FromForm] Plan plan)
+        public async Task<ActionResult<Plan>> PostPlan([FromBody] Plan plan)
         {
             _context.Plan.Add(plan);
             await _context.SaveChangesAsync();
