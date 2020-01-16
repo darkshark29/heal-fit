@@ -29,7 +29,7 @@ namespace heal_fit.Controllers
 
         // GET: api/Plans/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Plan>> GetPlan(long id)
+        public async Task<ActionResult<Plan>> GetPlan(int id)
         {
             var plan = await _context.Plan.FindAsync(id);
 
@@ -45,7 +45,7 @@ namespace heal_fit.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPlan(long id, [FromBody] Plan plan)
+        public async Task<IActionResult> PutPlan(int id, [FromBody] Plan plan)
         {
             if (id != plan.ID)
             {
@@ -87,7 +87,7 @@ namespace heal_fit.Controllers
 
         // DELETE: api/Plans/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Plan>> DeletePlan(long id)
+        public async Task<ActionResult<Plan>> DeletePlan(int id)
         {
             var plan = await _context.Plan.FindAsync(id);
             if (plan == null)
