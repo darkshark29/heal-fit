@@ -39,6 +39,8 @@ namespace heal_fit
 
             app.UseCors(options => {
                 options.AllowAnyOrigin();
+                options.AllowAnyMethod();
+                options.AllowAnyHeader();
             });
 
             app.UseAuthorization();

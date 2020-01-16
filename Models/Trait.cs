@@ -6,7 +6,7 @@ namespace heal_fit.Models
     {
         public int ID { get; set; }
 
-        public float Value { get; set; }
+        public double Value { get; set; }
 
         public TraitType Type { get; set; }
 
